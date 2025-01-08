@@ -1,6 +1,6 @@
 defmodule RaffleyWeb.RuleHTML do
   @moduledoc """
-  This module contains pages rendered by PageController.
+  This module contains pages rendered by RuleController.
 
   See the `rule_html` directory for all templates available.
   """
