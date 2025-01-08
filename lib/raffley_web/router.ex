@@ -15,25 +15,22 @@ defmodule RaffleyWeb.Router do
     plug :accepts, ["json"]
   end
 
-  def spy(conn, _options) do
-    greeting = ~w(Hi Howdy Hello) |> Enum.random()
-
-    conn = assign(conn, :greeting, greeting)
-
-    # IO.inspect(conn)
-
-    conn
-  end
-
   scope "/", RaffleyWeb do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/rules", RuleController, :index
   end
 
   # Other scopes may use custom stacks.
   scope "/api", RaffleyWeb do
     pipe_through :api
+  end
+
+  def spy(conn, _options) do
+    greeting = ~w(Hi Howdy Hello) |> Enum.random()
+
+    assign(conn, :greeting, greeting)
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
