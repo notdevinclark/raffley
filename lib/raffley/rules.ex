@@ -29,6 +29,7 @@ defmodule Raffley.Rules do
     |> String.to_integer()
     |> get_rule()
   end
+
   def get_rule(id) when is_integer(id) do
     list_rules()
     |> Enum.find(fn rule ->
