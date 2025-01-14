@@ -15,6 +15,9 @@ defmodule RaffleyWeb.RuleHTML do
       <p>
         {@rule.text}
       </p>
+      <.link navigate={~p"/rules"}>
+        ← Back
+      </.link>
     </div>
     """
   end
