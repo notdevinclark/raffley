@@ -6,13 +6,7 @@ defmodule Raffley.Raffles do
     Repo.all(Raffle)
   end
 
-  def get_raffle(id) when is_binary(id) do
-    id
-    |> String.to_integer()
-    |> get_raffle()
-  end
-
-  def get_raffle(id) when is_integer(id) do
+  def get_raffle!(id) do
     Repo.get(Raffle, id)
   end
 
